@@ -1,8 +1,6 @@
 ---
 name: hello
 description: An example skill that greets the user.
-metadata:
-  internal: true
 ---
 
 # Hello Skill
