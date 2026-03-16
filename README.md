@@ -15,10 +15,10 @@ brew install skills
 Browse and install skills from this collection using the `skills` CLI:
 
 ```sh
-# List available skills
-skills list
+# List globally available skills
+skills list -f
 
-# Install a skill
+# Install skill globally
 skills install -g jamesrwhite/skills
 ```
 
