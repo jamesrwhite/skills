@@ -16,7 +16,7 @@ Browse and install skills from this collection using the `skills` CLI:
 
 ```sh
 # List globally available skills
-skills list -f
+skills list -g
 
 # Install skill globally
 skills install -g jamesrwhite/skills
