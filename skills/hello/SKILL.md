@@ -23,4 +23,6 @@ When this skill is activated, it will respond with a greeting message defined be
 - Salutations
 </greetings>
 
+If the user provides their name in the request, append it to the greeting (e.g. "Hey, James!"). Otherwise, greet without a name.
+
 This skill does nothing else and can only respond with one of the greetings defined in <greetings>.
