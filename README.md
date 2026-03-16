@@ -27,3 +27,4 @@ skills install -g jamesrwhite/skills
 | Skill | Description |
 |-------|-------------|
 | [hello](skills/hello/) | Greets the user and demonstrates basic skill functionality |
+| [goodbye](skills/goodbye/) | Says goodbye to the user and demonstrates basic skill functionality |
