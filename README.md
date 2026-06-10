@@ -1,6 +1,6 @@
 # 🤹🏻‍♂️ Agent Skills
 
-A collection of agent skills for use with GitHub Copilot and other AI agents.
+A collection of agent skills for use with GitHub Copilot, Claude, Codex and other AI agents.
 
 ## Installation
 
