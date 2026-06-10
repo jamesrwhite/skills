@@ -64,19 +64,21 @@ git add -p path/to/file
 
 Commit immediately after staging each group — don't batch them up.
 
-Before the first commit, determine the Co-Authored-By trailer at runtime:
+Before the first commit, determine the Co-Authored-By trailer based on your own identity:
 
-```bash
-# Probe env vars set by the agent harness; fall back to a generic value
-_AI_MODEL="${ANTHROPIC_MODEL:-${CLAUDE_MODEL:-${AI_MODEL:-}}}"
-if [ -n "$_AI_MODEL" ]; then
-  _CO_AUTHOR="Co-Authored-By: ${_AI_MODEL} <noreply@ai>"
-else
-  _CO_AUTHOR=""
-fi
-```
+| Agent | Trailer |
+|-------|---------|
+| Claude (Anthropic) | `Co-Authored-By: Claude [Model Name] <noreply@anthropic.com>` |
+| GitHub Copilot | `Co-Authored-By: GitHub Copilot <noreply@github.com>` |
+| OpenAI Codex / ChatGPT | `Co-Authored-By: OpenAI Codex <noreply@openai.com>` |
+| Gemini | `Co-Authored-By: Google Gemini <noreply@google.com>` |
+| Amazon Q | `Co-Authored-By: Amazon Q <noreply@amazon.com>` |
+| Windsurf | `Co-Authored-By: Windsurf <noreply@codeium.com>` |
+| Cursor | `Co-Authored-By: Cursor <noreply@cursor.com>` |
 
-Then commit, including the trailer only when it resolved to something:
+Use the row that matches your identity. If you are Claude, substitute your specific model name (e.g. `Claude Sonnet 4.6`). If your agent is not listed, use `Co-Authored-By: [Your Agent Name] <noreply@ai>`.
+
+Set this as `_CO_AUTHOR` and then commit, including the trailer:
 
 ```bash
 git commit -m "$(cat <<EOF
