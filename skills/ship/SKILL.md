@@ -109,7 +109,38 @@ If the branch has no upstream yet:
 git push -u origin $(git branch --show-current)
 ```
 
-### 5. Confirm
+### 5. Offer to create a PR (if applicable)
+
+The `git push` output from step 4 includes a "Create a pull request" URL when no PR exists for the branch — use this to infer whether a PR is needed without an extra network call.
+
+If the push output **does not** contain a "create a pull request" prompt, a PR likely already exists — skip this step silently.
+
+If the push output **does** contain such a prompt, check whether `gh` is available:
+
+```bash
+which gh 2>/dev/null
+```
+
+If `gh` is not available, skip silently.
+
+If `gh` is available, ask the user: *"No PR exists for this branch — would you like me to create one?"*
+
+If yes, draft a title and body from the commits just pushed, then run:
+
+```bash
+gh pr create --title "<title>" --body "$(cat <<'EOF'
+## Summary
+<bullet points derived from the commits>
+
+## Test plan
+- [ ] <relevant test steps>
+EOF
+)"
+```
+
+Show the PR URL after creation.
+
+### 6. Confirm
 
 Show a summary of what was shipped:
 
