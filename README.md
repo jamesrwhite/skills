@@ -4,22 +4,31 @@ A collection of agent skills for use with GitHub Copilot and other AI agents.
 
 ## Installation
 
-Install the `skills` CLI via Homebrew:
+### `skills` CLI
 
 ```sh
 brew install skills
+
+# Install all skills
+skills add jamesrwhite/skills --all -g
+
+# Install one skill
+skills add jamesrwhite/skills --skill ship -g
+
+# Remove a skill
+skills remove ship -g
 ```
 
-## Usage
-
-Browse and install skills from this collection using the `skills` CLI:
+### `gh skill`
 
 ```sh
-# List globally available skills
-skills list -g
+brew install gh
 
-# Install skill globally
-skills install -g jamesrwhite/skills
+# Install all skills
+gh skill install jamesrwhite/skills --scope user
+
+# Install one skill
+gh skill install jamesrwhite/skills ship --scope user
 ```
 
 ## Skills
