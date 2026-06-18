@@ -33,8 +33,15 @@ gh skill install jamesrwhite/skills ship --scope user
 
 ## Skills
 
+### Examples
+
 | Skill | Description |
 |-------|-------------|
 | [hello](skills/hello/) | Greets the user and demonstrates basic skill functionality |
 | [goodbye](skills/goodbye/) | Says goodbye to the user and demonstrates basic skill functionality |
+
+### Git
+
+| Skill | Description |
+|-------|-------------|
 | [ship](skills/ship/) | Ships git changes by grouping them into small isolated commits and pushing |
