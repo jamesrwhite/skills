@@ -1,0 +1,11 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "jamesrwhite-skills",
+  "description": "A collection of agent skills for Claude Code including ship (group, commit, and push git changes) and example hello/goodbye skills.",
+  "version": "1.0.0",
+  "author": {
+    "name": "James White",
+    "email": "james.white.15@gmail.com"
+  },
+  "homepage": "https://github.com/jamesrwhite/skills"
+}

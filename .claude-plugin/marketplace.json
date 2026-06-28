@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "jamesrwhite-skills",
+  "description": "A collection of agent skills for Claude Code",
+  "owner": {
+    "name": "James White",
+    "email": "james.white.15@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "jamesrwhite-skills",
+      "description": "A collection of agent skills for Claude Code including ship (group, commit, and push git changes) and example hello/goodbye skills.",
+      "author": {
+        "name": "James White"
+      },
+      "category": "productivity",
+      "source": ".",
+      "homepage": "https://github.com/jamesrwhite/skills"
+    }
+  ]
+}

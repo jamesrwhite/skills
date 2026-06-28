@@ -31,6 +31,33 @@ gh skill install jamesrwhite/skills --scope user
 gh skill install jamesrwhite/skills ship --scope user
 ```
 
+### `claude plugin`
+
+```sh
+# Add this repo as a marketplace
+claude plugin marketplace add https://github.com/jamesrwhite/skills
+
+# Install all skills as a single plugin
+claude plugin install jamesrwhite-skills
+```
+
+### Claude (manual)
+
+Skills are installed by placing a directory containing a `SKILL.md` file into `~/.claude/skills/`.
+
+```sh
+# Clone the repo
+git clone https://github.com/jamesrwhite/skills.git
+
+# Install a specific skill
+ln -s "$(pwd)/skills/ship" ~/.claude/skills/ship
+
+# Or copy it
+cp -r skills/ship ~/.claude/skills/ship
+```
+
+Installed skills are available as slash commands in Claude Code (e.g. `/ship`).
+
 ## Skills
 
 ### Examples
