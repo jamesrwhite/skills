@@ -83,8 +83,8 @@ Set this as `_CO_AUTHOR` and then commit, including the trailer:
 ```bash
 git commit -m "$(cat <<EOF
 Short, direct description of what this change does and why
-${_CO_AUTHOR:+
-$_CO_AUTHOR}
+
+${_CO_AUTHOR:+$_CO_AUTHOR}
 EOF
 )"
 ```
