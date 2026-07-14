@@ -123,17 +123,40 @@ which gh 2>/dev/null
 
 If `gh` is not available, skip silently.
 
-If `gh` is available, ask the user: *"No PR exists for this branch — would you like me to create one?"*
+If `gh` is available, use `AskUserQuestion` to prompt the user with a single question:
 
-If yes, draft a title and body from the commits just pushed, then run:
+- **Question:** "No PR exists for this branch — would you like me to create one?"
+- **Options:**
+  - "Draft PR" — create the PR in draft state (`gh pr create --draft`)
+  - "Ready for review" — create the PR ready for review (no `--draft` flag)
+  - "No PR" — skip PR creation
+
+If the user chooses "No PR", skip silently.
+
+Otherwise, draft a title and body from the commits just pushed. Use the same agent identity you determined for the Co-Authored-By trailer to populate the generated-by footer — e.g. `🤖 Generated with Claude Sonnet 4.6` or `🤖 Generated with GitHub Copilot`. Then run with the appropriate flag:
 
 ```bash
+# Draft
+gh pr create --draft --title "<title>" --body "$(cat <<'EOF'
+## Summary
+<bullet points derived from the commits>
+
+## Test plan
+- [ ] <relevant test steps>
+
+🤖 Generated with <agent name and version>
+EOF
+)"
+
+# Ready for review
 gh pr create --title "<title>" --body "$(cat <<'EOF'
 ## Summary
 <bullet points derived from the commits>
 
 ## Test plan
 - [ ] <relevant test steps>
+
+🤖 Generated with <agent name and version>
 EOF
 )"
 ```
